@@ -1,10 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "0HH+4h+itJ3d2wUsFycwaHa7dLGZpxmkN5TI/SayaGT4P0TAyAhj3XtMBTYP8Zo2JwWmaKeLAM08sRMxe/LMIg==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Luca Frangiamore\\Desktop\\Training\\src\\GestioneAeroporto\\Core.csproj",
+  "dgSpecHash": "D/l3bH6MYPekgqeVdCx2JvlzAtR8gvGtXNz5icQi2HU3Sqn72LlcGBCWPdHsIfAA5TIJRWwM63eX82IdqRtRWg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\frang\\Desktop\\Training\\GestioneAeroporto\\GestioneAeroporto\\Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
+    "C:\\Users\\frang\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Il progetto 'C:\\Users\\frang\\Desktop\\Training\\GestioneAeroporto\\Domain\\Domain.csproj' non è stato trovato. Verificare che il riferimento del progetto sia valido e che il file di progetto esista.",
+      "libraryId": "C:\\Users\\frang\\Desktop\\Training\\GestioneAeroporto\\Domain\\Domain.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
