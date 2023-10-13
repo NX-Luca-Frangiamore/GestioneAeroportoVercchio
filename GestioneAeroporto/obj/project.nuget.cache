@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0HH+4h+itJ3d2wUsFycwaHa7dLGZpxmkN5TI/SayaGT4P0TAyAhj3XtMBTYP8Zo2JwWmaKeLAM08sRMxe/LMIg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Luca Frangiamore\\Desktop\\Training\\src\\GestioneAeroporto\\Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
+  ],
+  "logs": []
+}
