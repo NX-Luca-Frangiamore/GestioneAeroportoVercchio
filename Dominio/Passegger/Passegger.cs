@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Passegger
+    public class Passegger
     {
         public string Name { get; set; }
         public string Cognome { get; set; }

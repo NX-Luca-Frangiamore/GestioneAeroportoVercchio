@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    internal class Luggage
+    public class Luggage
     {
+        public float Peso { get; set; }
+        public float Dimensione { get; set; }
     }
 }
