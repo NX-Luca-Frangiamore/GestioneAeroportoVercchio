@@ -7,6 +7,7 @@
         public List<CreateLuggageCommand>? Luggages { get; init; }
         public TypeClass TypeTicket { get; init; }
         public int NSeat { get; set; }
+        public int Etá { get; set; }
     }
 
     class CreateLuggageCommand

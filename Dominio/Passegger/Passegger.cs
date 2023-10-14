@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
+    public enum TycketClass { First,Second}
     public class Passegger
     {
         public string Name { get; set; }
@@ -13,5 +14,6 @@ namespace Dominio
         public int Seat { get; set; }
         public string TypeTicket { get; set; }
         public List<Luggage> Luggages { get; set; }
+        public int Etá { get; set; }
     }
 }

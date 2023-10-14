@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "tDM4vHZoIo/Hqmt8mQOpQdU9GUWXc8RkTHxxl/amEwEOQaGjjI+i97NOceYFVY5UzxcTvhyZ1YfDFbeThAU2aw==",
+  "dgSpecHash": "44ctIR3SySQiETuxqygVjJR46HbFpD0/0MyFWsUHzT+fXWNCE88tvdHfar9zh1pvr2eT05+NvaE9pXJSOKOHwg==",
   "success": true,
   "projectFilePath": "C:\\Users\\frang\\Desktop\\Training\\GestioneAeroporto\\GestioneAeroporto\\Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\frang\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
+    "C:\\Users\\frang\\.nuget\\packages\\fluentresults\\3.15.2\\fluentresults.3.15.2.nupkg.sha512",
+    "C:\\Users\\frang\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
+    "C:\\Users\\frang\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.1\\microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
+    "C:\\Users\\frang\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
+    "C:\\Users\\frang\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }

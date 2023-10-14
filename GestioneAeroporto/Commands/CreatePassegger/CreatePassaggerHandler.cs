@@ -1,5 +1,7 @@
 ﻿
 using Dominio;
+using Dominio.Validation;
+using FluentResults;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 
@@ -7,10 +9,11 @@ namespace Core.Commands.CreateRoute
 {
     static class MethodToCreatePassegger
     {
-        internal static Passegger SetPersonalInfomation(this Passegger p, string nome, string cognome)
+        internal static Passegger SetPersonalInfomation(this Passegger p, string nome, string cognome,int Etá)
         {
             p.Name = nome;
             p.Cognome = cognome;
+            p.Etá = Etá;
             return p;
         }
         internal static Passegger AddLuggage(this Passegger p, List<CreateLuggageCommand>? luggages)
@@ -40,17 +43,18 @@ namespace Core.Commands.CreateRoute
         public Result<Passegger> CreatePassegger(CreatePasseggerCommand command) {
 
             var newPassegger = new Passegger();
-            newPassegger.SetPersonalInfomation(command.Nome, command.Cognome)
+            newPassegger.SetPersonalInfomation(command.Nome, command.Cognome,command.Etá)
             .AddLuggage(command.Luggages)
             .SetTicket(command.TypeTicket);
 
             if(ValidatePassegger(newPassegger))
                return newPassegger;
-            return new PasseggerExeption();
+            return Result.Fail("Impossibile creare il passeggero");
         }
         private bool ValidatePassegger(Passegger newPassegger)
         {
-            return true;
+            PasseggerValidator validator=new();
+            return validator.Validate(newPassegger).IsValid;
         }
 
        
