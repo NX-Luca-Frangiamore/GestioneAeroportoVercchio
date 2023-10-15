@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    record City(string Name,string Cap);
-    record Data(int gg,int m,int h);
-    record Ora(int h,int mm);
+    public record City(string Name,string Cap);
+    public record Data(int gg,int m,int h);
+    public record Ora(int h,int mm);
     class Route
     {
         List<Passegger> passeggers;
