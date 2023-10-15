@@ -32,6 +32,19 @@
           }
         }
       },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Logging.Abstractions/6.0.1": {
         "type": "package",
         "compile": {
@@ -55,6 +68,53 @@
           "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets": {}
         }
       },
+      "SimpleSoft.Mediator/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "SimpleSoft.Mediator.Abstractions": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/SimpleSoft.Mediator.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SimpleSoft.Mediator.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SimpleSoft.Mediator.Abstractions/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/SimpleSoft.Mediator.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/SimpleSoft.Mediator.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SimpleSoft.Mediator.Microsoft.Extensions/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.0",
+          "SimpleSoft.Mediator": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/SimpleSoft.Mediator.Microsoft.Extensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/SimpleSoft.Mediator.Microsoft.Extensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Threading.Tasks.Extensions/4.5.4": {
         "type": "package",
         "compile": {
@@ -68,7 +128,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "FluentValidation": "11.7.1"
+          "FluentValidation": "11.7.1",
+          "SimpleSoft.Mediator.Microsoft.Extensions": "2.2.0"
         },
         "compile": {
           "bin/placeholder/Dominio.dll": {}
@@ -117,6 +178,19 @@
         "lib/netstandard2.0/FluentValidation.xml",
         "lib/netstandard2.1/FluentValidation.dll",
         "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/3.0.0": {
+      "sha512": "ofQRroDlzJ0xKOtzNuaVt6QKNImFkhkG0lIMpGl7PtXnIf5SuLWBeiQZAP8DNSxDBJJdcsPkiJiMYK2WA5H8dQ==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec"
       ]
     },
     "Microsoft.Extensions.Logging.Abstractions/6.0.1": {
@@ -252,6 +326,61 @@
         "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll"
       ]
     },
+    "SimpleSoft.Mediator/2.2.0": {
+      "sha512": "5sHDuENTD5i1KUWk8sycTv3dE2NVQDqjxWlUIffOZVd/EXmUhQtqfYufnzoQ3VORWUdH2ddU+byXZwN/4bsC5g==",
+      "type": "package",
+      "path": "simplesoft.mediator/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SimpleSoft.Mediator.dll",
+        "lib/net40/SimpleSoft.Mediator.xml",
+        "lib/net45/SimpleSoft.Mediator.dll",
+        "lib/net45/SimpleSoft.Mediator.xml",
+        "lib/netstandard1.1/SimpleSoft.Mediator.dll",
+        "lib/netstandard1.1/SimpleSoft.Mediator.xml",
+        "lib/netstandard2.0/SimpleSoft.Mediator.dll",
+        "lib/netstandard2.0/SimpleSoft.Mediator.xml",
+        "simplesoft.mediator.2.2.0.nupkg.sha512",
+        "simplesoft.mediator.nuspec"
+      ]
+    },
+    "SimpleSoft.Mediator.Abstractions/2.2.0": {
+      "sha512": "uKuTsjebu4Clh80KpUdOTTILvSAM34jNkWpfMaV0loCOW+S9Yo19g6bnavaiTZ6xe8jVJTz7n3NJNLZ0Yg9o4A==",
+      "type": "package",
+      "path": "simplesoft.mediator.abstractions/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SimpleSoft.Mediator.Abstractions.dll",
+        "lib/net40/SimpleSoft.Mediator.Abstractions.xml",
+        "lib/net45/SimpleSoft.Mediator.Abstractions.dll",
+        "lib/net45/SimpleSoft.Mediator.Abstractions.xml",
+        "lib/netstandard1.0/SimpleSoft.Mediator.Abstractions.dll",
+        "lib/netstandard1.0/SimpleSoft.Mediator.Abstractions.xml",
+        "lib/netstandard2.0/SimpleSoft.Mediator.Abstractions.dll",
+        "lib/netstandard2.0/SimpleSoft.Mediator.Abstractions.xml",
+        "simplesoft.mediator.abstractions.2.2.0.nupkg.sha512",
+        "simplesoft.mediator.abstractions.nuspec"
+      ]
+    },
+    "SimpleSoft.Mediator.Microsoft.Extensions/2.2.0": {
+      "sha512": "82F7v10RCF1uhNYIJHqTMiM0URUHWtBL2zgTAfh8nHBA6kilhDKtASlDxBH1Lc4spLXrpg8mvn397BmIU/ooTw==",
+      "type": "package",
+      "path": "simplesoft.mediator.microsoft.extensions/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.1/SimpleSoft.Mediator.Microsoft.Extensions.dll",
+        "lib/netstandard1.1/SimpleSoft.Mediator.Microsoft.Extensions.xml",
+        "lib/netstandard2.0/SimpleSoft.Mediator.Microsoft.Extensions.dll",
+        "lib/netstandard2.0/SimpleSoft.Mediator.Microsoft.Extensions.xml",
+        "lib/netstandard2.1/SimpleSoft.Mediator.Microsoft.Extensions.dll",
+        "lib/netstandard2.1/SimpleSoft.Mediator.Microsoft.Extensions.xml",
+        "simplesoft.mediator.microsoft.extensions.2.2.0.nupkg.sha512",
+        "simplesoft.mediator.microsoft.extensions.nuspec"
+      ]
+    },
     "System.Threading.Tasks.Extensions/4.5.4": {
       "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
@@ -300,7 +429,8 @@
       "Dominio >= 1.0.0",
       "FluentResults >= 3.15.2",
       "FluentValidation >= 11.7.1",
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4"
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4",
+      "SimpleSoft.Mediator.Microsoft.Extensions >= 2.2.0"
     ]
   },
   "packageFolders": {
@@ -364,6 +494,10 @@
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
             "version": "[1.19.4, )"
+          },
+          "SimpleSoft.Mediator.Microsoft.Extensions": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           }
         },
         "imports": [

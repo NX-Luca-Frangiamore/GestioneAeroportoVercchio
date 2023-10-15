@@ -48,6 +48,10 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.7.1, )"
+            },
+            "SimpleSoft.Mediator.Microsoft.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             }
           },
           "imports": [
@@ -127,6 +131,10 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.19.4, )"
+            },
+            "SimpleSoft.Mediator.Microsoft.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             }
           },
           "imports": [
