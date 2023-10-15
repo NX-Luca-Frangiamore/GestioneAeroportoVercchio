@@ -1,6 +1,8 @@
-﻿namespace Core.Commands.CreateRoute
+﻿using FluentResults;
+using SimpleSoft.Mediator;
+namespace Core.Commands.CreatePassegger
 {
-    internal class CreatePasseggerCommand
+    internal class CreatePasseggerCommand: Command<Result<ResultPassegger>>
     {
         public required string Nome { get; init; }
         public required string Cognome { get; init; }

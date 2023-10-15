@@ -1,11 +1,11 @@
-﻿
+﻿using SimpleSoft.Mediator;
 using Dominio;
 using Dominio.Validation;
 using FluentResults;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 
-namespace Core.Commands.CreateRoute
+namespace Core.Commands.CreatePassegger
 {
     static class MethodToCreatePassegger
     {
@@ -38,26 +38,18 @@ namespace Core.Commands.CreateRoute
             return p;
         }
     }
-    internal class CreatePassaggerHandler
+    internal class CreatePassaggerHandler : ICommandHandler<CreatePasseggerCommand,Result<ResultPassegger>> 
     {
-        public Result<Passegger> CreatePassegger(CreatePasseggerCommand command) {
-
-            var newPassegger = new Passegger();
-            newPassegger.SetPersonalInfomation(command.Nome, command.Cognome,command.Etá)
-            .AddLuggage(command.Luggages)
-            .SetTicket(command.TypeTicket);
-
-            if(ValidatePassegger(newPassegger))
-               return newPassegger;
-            return Result.Fail("Impossibile creare il passeggero");
-        }
-        private bool ValidatePassegger(Passegger newPassegger)
+        public async Task<Result<ResultPassegger>> HandleAsync(CreatePasseggerCommand cmd, CancellationToken ct)
         {
-            PasseggerValidator validator=new();
-            return validator.Validate(newPassegger).IsValid;
-        }
+                var newPassegger = new Passegger();
+                newPassegger.SetPersonalInfomation(cmd.Nome, cmd.Cognome, cmd.Etá)
+                .AddLuggage(cmd.Luggages)
+                .SetTicket(cmd.TypeTicket);
 
-       
-
+                if (newPassegger.IsValid())
+                    return Result.Ok(new ResultPassegger(newPassegger.Id));
+                return Result.Fail("Impossibile creare il passeggero");
+            }
     }
 }
