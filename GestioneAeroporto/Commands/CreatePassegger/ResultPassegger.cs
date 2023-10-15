@@ -1,4 +1,9 @@
 ﻿namespace Core.Commands.CreatePassegger
 {
-    record ResultPassegger(string id);
+    class ResultPassegger {
+        public string idPassegger { get; set; }
+        public ResultPassegger(string idPassegger) {
+        }
+    
+    };
 }

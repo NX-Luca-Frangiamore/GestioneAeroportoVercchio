@@ -9,15 +9,12 @@ using System.Threading.Tasks;
 namespace Dominio
 {
     public enum TycketClass { First,Second}
-    public class Passegger
+    public class Passegger:Person
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Cognome { get; set; }
-        public int Seat { get; set; }
-        public string TypeTicket { get; set; }
+    
         public List<Luggage> Luggages { get; set; }
         public int Etá { get; set; }
+        public Ticket Ticket { get; set; }
 
         public bool IsValid()
         {

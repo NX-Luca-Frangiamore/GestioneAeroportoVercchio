@@ -4,17 +4,19 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using FluentResults;
 namespace Dominio
 {
     public record City(string Name,string Cap);
     public record Data(int gg,int m,int h);
     public record Ora(int h,int mm);
-    class Route
+    public class FlightRoute
     {
-        List<Passegger> passeggers;
-        public City From { get; set; }
-        public City To { get; set; }
-        public Data Data { get; set; }
+        public string Id { get; set; }
+        public required City From { get; set; }
+        public required City To { get; set; }
+        public required Data Data { get; set; }
+        public required int SizeSeat { get; set; }
     }
+    
 }

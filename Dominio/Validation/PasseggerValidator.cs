@@ -14,7 +14,6 @@ namespace Dominio.Validation
             RuleFor(x => x.Name).Length(3, 10);
             RuleFor(x=>x.Cognome).NotEmpty().NotNull(); 
             RuleFor(x=> x.Cognome).Length(3,15);
-            RuleFor(x => x.TypeTicket).IsEnumName(typeof(TycketClass));
             RuleForEach(x => x.Luggages).Must(p => p.Peso > 0).Must(d => d.Dimensione > 0);
             RuleFor(x => x.Etá).GreaterThan(0);
         }
