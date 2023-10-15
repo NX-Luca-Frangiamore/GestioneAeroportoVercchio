@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dominio
+namespace Dominio.Passegger
 {
     public enum TycketClass { First,Second}
     public class Passegger:Person

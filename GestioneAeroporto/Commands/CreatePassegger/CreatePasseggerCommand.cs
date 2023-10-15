@@ -10,7 +10,6 @@ namespace Core.Commands.CreatePassegger
         public required string Cognome { get; init; }
         public List<CreateLuggageCommand>? Luggages { get; init; }
         public TypeClassTicket TypeTicket { get; init; }
-        public int NSeat { get; set; }
         public int Etá { get; set; }
     }
 

@@ -1,11 +1,12 @@
 ﻿using Dominio;
 using FluentResults;
-
+using Dominio.Passegger;
 namespace Core
 {
     public interface IRepository
     {
-         Task<bool> AddNewPasseggerToRoute(string idRoute,Passegger person);
+        Task<Result<Route>> GetRoute(string idRoute);
+        Task<bool> AddNewPasseggerToRoute(string idRoute,Passegger person);
          Task<bool> DeletePasseggerToRoute(string id);
          Task<bool> ChangePasseggerToRoute(string id, Passegger person);
          Task<bool> NewTicketToRoute(string idRoute);

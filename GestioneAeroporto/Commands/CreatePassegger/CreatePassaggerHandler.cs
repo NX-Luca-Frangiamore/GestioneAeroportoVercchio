@@ -6,7 +6,7 @@ using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using Microsoft.AspNetCore.Routing;
 using Core.Commands.CreateTicket;
-
+using Dominio.Passegger;
 namespace Core.Commands.CreatePassegger
 {
     static class MethodToCreatePassegger
@@ -56,8 +56,7 @@ namespace Core.Commands.CreatePassegger
                 var cmdTicket = new TicketCommand
                 {
                     IdFlightRoute = cmd.IdRoute,
-                    TypeTicket = cmd.TypeTicket,
-                    NSeats = cmd.NSeat
+                    TypeTicket = cmd.TypeTicket
                 };
                 return await AddNewPasseggerIfPossible(newPassegger,cmdTicket);
             }

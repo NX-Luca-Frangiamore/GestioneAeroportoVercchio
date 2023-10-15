@@ -3,6 +3,7 @@
     class ResultPassegger {
         public string idPassegger { get; set; }
         public ResultPassegger(string idPassegger) {
+            this.idPassegger = idPassegger;
         }
     
     };

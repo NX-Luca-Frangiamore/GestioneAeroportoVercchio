@@ -16,7 +16,7 @@ namespace Dominio
         public required City From { get; set; }
         public required City To { get; set; }
         public required Data Data { get; set; }
-        public required int SizeSeat { get; set; }
+        public required int NSeatsLeft { get; set; }
     }
     
 }

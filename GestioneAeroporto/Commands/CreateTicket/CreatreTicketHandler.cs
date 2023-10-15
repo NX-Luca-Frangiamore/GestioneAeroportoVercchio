@@ -5,19 +5,23 @@ using SimpleSoft.Mediator;
 
 namespace Core.Commands.CreateTicket
 {
-    public class CreatreTicketHandler:ICommandHandler<TicketCommand,Result<Ticket>>
+    public class CreatreTicketHandler:ICommandHandler<TicketCommand,Result<TicketResult>>
     {
-        private List<Ticket> Tickets;
-        private int NTicketLeft;
+        private readonly IRepository _repository;
+        public CreatreTicketHandler(IRepository repository) {
+            _repository = repository;        
+        }
 
-        public async Task<Result<Ticket>> HandleAsync(TicketCommand cmd, CancellationToken ct)
+        public async Task<Result<TicketResult>> HandleAsync(TicketCommand cmd, CancellationToken ct)
         {
-            if (NTicketLeft > cmd.NSeats)
-            {
-                var NewTicket = new Ticket();
-                Tickets.Add(NewTicket);
-                return Result.Ok(NewTicket);
-            }
+            var Route= await _repository.GetRoute(cmd.IdFlightRoute);
+            //prendi valore nseatleft
+            //if (NTicketLeft > cmd.NSeats)
+            //{
+            //    var NewTicket = new Ticket();
+            //    Tickets.Add(NewTicket);
+            //    return Result.Ok(NewTicket);
+            //}
             return Result.Fail("Posti esauriti");
         }
     }

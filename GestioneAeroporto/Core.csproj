@@ -13,6 +13,7 @@
     <PackageReference Include="FluentResults" Version="3.15.2" />
     <PackageReference Include="FluentValidation" Version="11.7.1" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
+    <PackageReference Include="SimpleSoft.Mediator.Microsoft.Extensions" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="Commands\CreateRoute\" />
+    <Folder Include="Medietor\" />
   </ItemGroup>
 
 </Project>

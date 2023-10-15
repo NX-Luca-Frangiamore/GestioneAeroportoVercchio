@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Dominio.Passegger;
 namespace Dominio.Validation
 {
-    public class PasseggerValidator:AbstractValidator<Passegger>
+    public class PasseggerValidator:AbstractValidator<Passegger.Passegger>
     {
         public PasseggerValidator() {
             RuleFor(x => x.Name).NotEmpty().NotNull();
