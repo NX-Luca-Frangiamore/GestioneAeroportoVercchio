@@ -7,13 +7,10 @@ namespace Core.Commands.CreateTicket
 {
     public class TicketCommand:Command<Result<Ticket>>
     {
-        public TypeClassTicket TypeClassTicket { get; set; }
+        public TypeClassTicket TypeTicket { get; set; }
         public int NSeats { get; set; }
-        public TicketCommand(TypeClassTicket typeClassTicket, int nSeats)
-        {
-            TypeClassTicket = typeClassTicket;
-            NSeats = nSeats;
-        }
+        public string Id { get; set; }
+        public string IdFlightRoute { get; set; }
     }
     public enum TypeClassTicket
     {

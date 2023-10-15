@@ -53,20 +53,25 @@ namespace Core.Commands.CreatePassegger
             .AddLuggage(cmd.Luggages);
             if (newPassegger.IsValid())
             {
-                return await AddNewPasseggerIfPossible(newPassegger, cmd.IdRoute,cmd.TypeTicket);
+                var cmdTicket = new TicketCommand
+                {
+                    IdFlightRoute = cmd.IdRoute,
+                    TypeTicket = cmd.TypeTicket,
+                    NSeats = cmd.NSeat
+                };
+                return await AddNewPasseggerIfPossible(newPassegger,cmdTicket);
             }
             return Result.Fail("Impossibile creare il passeggero");
 
         }
-        private async Task<Result<ResultPassegger>> AddNewPasseggerIfPossible(Passegger Passegger,string IdFlightRoute,TypeClassTicket typeClassTicket)
+        private async Task<Result<ResultPassegger>> AddNewPasseggerIfPossible(Passegger Passegger, TicketCommand cmdTicket)
         {
-            var ResultTicket = _mediator.Send(new TicketCommand(typeClassTicket,-1));
+            var ResultTicket = _mediator.Send(cmdTicket);
             if (ResultTicket.IsSuccess)
             {
-                var ResultRoute = await _repository.NewPasseggerToRoute(IdFlightRoute, Passegger);
-      
+                var ResultRoute = await _repository.AddNewPasseggerToRoute(cmdTicket.IdFlightRoute, Passegger);     
                 {
-                    if (ResultRoute.IsSuccess)
+                    if (ResultRoute)
                         return Result.Ok(new ResultPassegger(Passegger.Id));
                 }
                 return Result.Fail("Impossibile inserire il passeggero");
