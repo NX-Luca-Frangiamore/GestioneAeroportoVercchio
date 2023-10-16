@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "nYSsIZ2cf7tlvLVVGBDjiAMfTL/UVT8zzs2Jpp4Pkt0xzkhLpyXkuFm0hQya1p3yzaW2teOxpzXKO62mySd2jQ==",
+  "dgSpecHash": "9RwlwCfoI+yQnLC+jLCY4FDZ4Jl25Uz9g+4LFonjMpcaoq0Yy/qiU6xqDZ+5iFvLbjHHhF3oNzWi0LNEaDY6Ow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\frang\\Desktop\\Training\\GestioneAeroporto\\GestioneAeroporto\\Core.csproj",
+  "projectFilePath": "C:\\Users\\Luca Frangiamore\\Desktop\\Training\\src\\GestioneAeroporto\\Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\frang\\.nuget\\packages\\fluentresults\\3.15.2\\fluentresults.3.15.2.nupkg.sha512",
-    "C:\\Users\\frang\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
-    "C:\\Users\\frang\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.0\\microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
-    "C:\\Users\\frang\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.1\\microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
-    "C:\\Users\\frang\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
-    "C:\\Users\\frang\\.nuget\\packages\\simplesoft.mediator\\2.2.0\\simplesoft.mediator.2.2.0.nupkg.sha512",
-    "C:\\Users\\frang\\.nuget\\packages\\simplesoft.mediator.abstractions\\2.2.0\\simplesoft.mediator.abstractions.2.2.0.nupkg.sha512",
-    "C:\\Users\\frang\\.nuget\\packages\\simplesoft.mediator.microsoft.extensions\\2.2.0\\simplesoft.mediator.microsoft.extensions.2.2.0.nupkg.sha512",
-    "C:\\Users\\frang\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\fluentresults\\3.15.2\\fluentresults.3.15.2.nupkg.sha512",
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.0\\microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.1\\microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\simplesoft.mediator\\2.2.0\\simplesoft.mediator.2.2.0.nupkg.sha512",
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\simplesoft.mediator.abstractions\\2.2.0\\simplesoft.mediator.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\simplesoft.mediator.microsoft.extensions\\2.2.0\\simplesoft.mediator.microsoft.extensions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Luca Frangiamore\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
   "logs": []
 }

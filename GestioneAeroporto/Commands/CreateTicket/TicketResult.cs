@@ -2,5 +2,6 @@
 {
     public class TicketResult
     {
+        public string IdTicket { get; set; }
     }
 }

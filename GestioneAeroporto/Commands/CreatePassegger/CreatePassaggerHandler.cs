@@ -51,31 +51,37 @@ namespace Core.Commands.CreatePassegger
             var newPassegger = new Passegger();
             newPassegger.SetPersonalInfomation(cmd.Nome, cmd.Cognome, cmd.Etá)
             .AddLuggage(cmd.Luggages);
+
             if (newPassegger.IsValid())
             {
-                var cmdTicket = new TicketCommand
-                {
-                    IdFlightRoute = cmd.IdRoute,
-                    TypeTicket = cmd.TypeTicket
-                };
-                return await AddNewPasseggerIfPossible(newPassegger,cmdTicket);
+                var ResultTicket = CreateTicket(cmd);
+                if (ResultTicket.IsSuccess)
+                    return await LinkPasseggerToTicket(newPassegger, ResultTicket.Value.IdTicket);
+                return Result.Fail("Impossibile creare il ticket");
             }
             return Result.Fail("Impossibile creare il passeggero");
 
         }
-        private async Task<Result<ResultPassegger>> AddNewPasseggerIfPossible(Passegger Passegger, TicketCommand cmdTicket)
+
+        private Result<TicketResult> CreateTicket(CreatePasseggerCommand cmd)
         {
-            var ResultTicket = _mediator.Send(cmdTicket);
-            if (ResultTicket.IsSuccess)
+            var cmdTicket = new TicketCommand
             {
-                var ResultRoute = await _repository.AddNewPasseggerToRoute(cmdTicket.IdFlightRoute, Passegger);     
+                IdFlightRoute = cmd.IdRoute,
+                TypeTicket = cmd.TypeTicket
+            };
+            var Ticket = _mediator.Send(cmdTicket);
+            return Ticket;
+        }
+
+        private async Task<Result<ResultPassegger>> LinkPasseggerToTicket(Passegger Passegger, string idTicket)
+        {
+                var ResultRoute = await _repository.AddNewPasseggerWithTicket(idTicket, Passegger);     
                 {
                     if (ResultRoute)
                         return Result.Ok(new ResultPassegger(Passegger.Id));
                 }
-                return Result.Fail("Impossibile inserire il passeggero");
-            }
-            return Result.Fail("Impossibile creare il ticket");
+                return Result.Fail("Impossibile inserire il passeggero");  
         }
     }
 }
