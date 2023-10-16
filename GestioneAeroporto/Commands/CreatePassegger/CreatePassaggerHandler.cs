@@ -39,9 +39,9 @@ namespace Core.Commands.CreatePassegger
     }
     internal class CreatePassaggerHandler : ICommandHandler<CreatePasseggerCommand, Result<ResultPassegger>>
     {
-        private readonly IRepository _repository;
+        private readonly IRepositoryPassegger _repository;
         private readonly Mediator _mediator;
-        public CreatePassaggerHandler(IRepository repository, Mediator mediator)
+        public CreatePassaggerHandler(IRepositoryPassegger repository, Mediator mediator)
         {
             _repository = repository;
             _mediator = mediator;

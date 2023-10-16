@@ -8,14 +8,16 @@ namespace Core.Commands.CreateTicket
 {
     public class CreatreTicketHandler:ICommandHandler<TicketCommand,Result<TicketResult>>
     {
-        private readonly IRepository _repository;
-        public CreatreTicketHandler(IRepository repository) {
-            _repository = repository;        
+        private readonly IRepositoryTicket _repositoryTicket;
+        private readonly IRepositoryRoute _repositoryRoute;
+        public CreatreTicketHandler(IRepositoryTicket repositoryTicket, IRepositoryRoute repositoryRoute) {
+            _repositoryTicket = repositoryTicket; 
+            _repositoryRoute= repositoryRoute;
         }
 
         public async Task<Result<TicketResult>> HandleAsync(TicketCommand cmd, CancellationToken ct)
         {
-            var Route= await _repository.GetRoute(cmd.IdFlightRoute);
+            var Route= await _repositoryRoute.GetRoute(cmd.IdFlightRoute);
             if (Route.Value.NSeatsLeft>0)
             {
                 var NewTicket = new Ticket()
@@ -25,7 +27,7 @@ namespace Core.Commands.CreateTicket
                 };
                 if (new TicketValidator().Validate(NewTicket).IsValid)
                 {
-                    var ResultOfNewTicket = await _repository.NewTicketToRoute(cmd.IdFlightRoute, NewTicket);
+                    var ResultOfNewTicket = await  _repositoryTicket.NewTicketToRoute(cmd.IdFlightRoute, NewTicket);
                     if (ResultOfNewTicket)
                         return Result.Ok(new TicketResult() { IdTicket = NewTicket.Id });
                 }
