@@ -1,7 +1,8 @@
-﻿namespace Core.Commands.CreateTicket
+﻿using Dominio;
+
+namespace Core.Commands.CreateTicket
 {
-    public class TicketResult
+    public class TicketResult:Ticket
     {
-        public string IdTicket { get; set; }
     }
 }

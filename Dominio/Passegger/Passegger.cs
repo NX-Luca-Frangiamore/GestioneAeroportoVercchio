@@ -14,7 +14,7 @@ namespace Dominio.Passegger
     
         public List<Luggage> Luggages { get; set; }
         public int Etá { get; set; }
-        public Ticket Ticket { get; set; }
+        public string IdTicket { get; set; }
 
         public bool IsValid()
         {

@@ -11,6 +11,7 @@ namespace Dominio
     {
         public string Id { get; set; }
         public int Seat { get; set; }
+        public string IdPassegger {  get; set; }
         public string TycketClassTicket { get; set; }
     }
 }

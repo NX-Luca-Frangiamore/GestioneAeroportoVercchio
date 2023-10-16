@@ -9,6 +9,8 @@ namespace Core.Commands.CreateTicket
     {
         public TypeClassTicket TypeTicket { get; set; }
         public string IdFlightRoute { get; set; }
+
+        public string IdPassegger {  get; set; }
     }
     public enum TypeClassTicket
     {

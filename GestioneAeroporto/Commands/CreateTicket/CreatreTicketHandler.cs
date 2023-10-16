@@ -29,7 +29,7 @@ namespace Core.Commands.CreateTicket
                 {
                     var ResultOfNewTicket = await  _repositoryTicket.NewTicketToRoute(cmd.IdFlightRoute, NewTicket);
                     if (ResultOfNewTicket)
-                        return Result.Ok(new TicketResult() { IdTicket = NewTicket.Id });
+                        return Result.Ok(NewTicket);
                 }
                 return Result.Fail("Impossibile creare un nuovo ticket");
             }

@@ -54,29 +54,31 @@ namespace Core.Commands.CreatePassegger
 
             if (newPassegger.IsValid())
             {
-                var ResultTicket = CreateTicket(cmd);
+                var cmdTicket = ParsePasseggerCommandToTicketCommand(cmd,newPassegger.Id);
+                var ResultTicket = _mediator.Send(cmdTicket);
                 if (ResultTicket.IsSuccess)
-                    return await LinkPasseggerToTicket(newPassegger, ResultTicket.Value.IdTicket);
+                    return await LinkPasseggerToTicket(newPassegger, ResultTicket.Value.Id);
                 return Result.Fail("Impossibile creare il ticket");
             }
             return Result.Fail("Impossibile creare il passeggero");
 
         }
-
-        private Result<TicketResult> CreateTicket(CreatePasseggerCommand cmd)
+        private TicketCommand ParsePasseggerCommandToTicketCommand(CreatePasseggerCommand cmd,string IdPassegger)
         {
             var cmdTicket = new TicketCommand
             {
                 IdFlightRoute = cmd.IdRoute,
-                TypeTicket = cmd.TypeTicket
+                TypeTicket = cmd.TypeTicket,
+                IdPassegger = IdPassegger
             };
-            var Ticket = _mediator.Send(cmdTicket);
-            return Ticket;
+            return cmdTicket;
         }
 
-        private async Task<Result<ResultPassegger>> LinkPasseggerToTicket(Passegger Passegger, string idTicket)
+
+        private async Task<Result<ResultPassegger>> LinkPasseggerToTicket(Passegger Passegger, string IdTicket)
         {
-                var ResultRoute = await _repository.AddNewPasseggerWithTicket(idTicket, Passegger);     
+                Passegger.IdTicket = IdTicket;
+                var ResultRoute = await _repository.AddNewPasseggerWithTicket(IdTicket, Passegger);     
                 {
                     if (ResultRoute)
                         return Result.Ok(new ResultPassegger(Passegger.Id));
